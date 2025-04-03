@@ -1,14 +1,20 @@
 programa{
+    inclua biblioteca Texto --> t
     funcao inicio(){
-        inteiro num, centena, unidade, dezena
+        inteiro   quant, i
+        cadeia num, invert = ""
+        caracter c
 
         escreva("Digite um número comm três algarismos ex(498):\n")
         leia(num)
 
-        centena = num / 100
-        dezena = (num / 10) % 10
-        unidade = num % 10
+        quant = t.numero_caracteres(num)
 
-        escreva("O número invertido é: ", (unidade * 100) + (dezena * 10) + centena)
+        para(i = quant -1 ; i >= 0; i--){
+            c = t.obter_caracter(num,i)
+            invert = invert + c
+        }
+        
+         escreva(invert)
     }
 }
